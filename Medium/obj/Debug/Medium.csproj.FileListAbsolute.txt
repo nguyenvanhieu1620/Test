@@ -1,0 +1,7 @@
+C:\Users\admin\Desktop\Easy\Medium\bin\Debug\Medium.exe.config
+C:\Users\admin\Desktop\Easy\Medium\bin\Debug\Medium.exe
+C:\Users\admin\Desktop\Easy\Medium\bin\Debug\Medium.pdb
+C:\Users\admin\Desktop\Easy\Medium\obj\Debug\Medium.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Easy\Medium\obj\Debug\Medium.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Easy\Medium\obj\Debug\Medium.exe
+C:\Users\admin\Desktop\Easy\Medium\obj\Debug\Medium.pdb
