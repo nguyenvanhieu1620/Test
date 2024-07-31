@@ -46,114 +46,91 @@ namespace Hard
                         }
                         break;
                     case 2:
-                       
+                        {
+                            double a, b;
+                            do
+                            {
+                                Console.Write("Nhập giá trị a: ");
+                                 a = double.Parse(Console.ReadLine());
+                                Console.Write("Nhập giá trị b: ");
+                                 b = double.Parse(Console.ReadLine());
+                            } while (a > b);
+                            
+                            
+                            double result = RandomRange(a, b);
+                            Console.WriteLine($"Giá trị random trong khoảng từ '{a}' đến " + b + ": " + result);
+                        }
                         break;
                     case 3:
                         {
-                            Console.Write("Nhập kích thước của  mảng A: ");
-                            int sizeA = int.Parse(Console.ReadLine());
-                            double[] arrayA = new double[sizeA];
-                            Console.WriteLine("Nhập mảng A: ");
-                            for (int i = 0; i < sizeA; i++)
-                            {
-                                arrayA[i] = double.Parse(Console.ReadLine());
-                            }
-                            Console.Write("Nhập kích thước của  mảng B: ");
-                            int sizeB = int.Parse(Console.ReadLine());
-                            double[] arrayB = new double[sizeB];
-                            Console.WriteLine("Nhập mảng B: ");
-                            for (int j = 0; j < sizeB; j++)
-                            {
-                                arrayB[j] = double.Parse(Console.ReadLine());
-                            }
-                            double[] arrayC = arrayA.Concat(arrayB).ToArray();
-                            TangDan(arrayC);
-                            foreach (int k in arrayC)
-                            {
-                                Console.Write(k + " ");
-                            }
-                            Console.WriteLine();
+                            // Nhập các phần tử của mảng a từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
+                            int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Nhập các phần tử của mảng b từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng b (cách nhau bởi dấu cách): ");
+                            int[] arrayB = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Gọi hàm để nối hai mảng và sắp xếp
+                            int[] arrayC = MergeSortedArrays(arrayA, arrayB);
+
+                            // In mảng kết quả ra màn hình
+                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
+                            Console.WriteLine(string.Join(" ", arrayC));
                         }
                         break;
                     case 4:
-                        { 
-                        Console.Write("Nhập kích thước của  mảng A: ");
-                        int sizeA = int.Parse(Console.ReadLine());
-                        double[] arrayA = new double[sizeA];
-                        Console.WriteLine("Nhập mảng A: ");
-                        for (int i = 0; i < sizeA; i++)
                         {
-                            arrayA[i] = double.Parse(Console.ReadLine());
+                            // Nhập các phần tử của mảng a từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
+                            int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Nhập các phần tử của mảng b từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng b (cách nhau bởi dấu cách): ");
+                            int[] arrayB = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Gọi hàm để nối hai mảng và sắp xếp
+                            int[] arrayC = MergeSortedArrays2(arrayA, arrayB);
+
+                            // In mảng kết quả ra màn hình
+                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
+                            Console.WriteLine(string.Join(" ", arrayC));
                         }
-                        Console.Write("Nhập kích thước của  mảng B: ");
-                        int sizeB = int.Parse(Console.ReadLine());
-                        double[] arrayB = new double[sizeB];
-                        Console.WriteLine("Nhập mảng B: ");
-                        for (int j = 0; j < sizeB; j++)
-                        {
-                            arrayB[j] = double.Parse(Console.ReadLine());
-                        }
-                        double[] arrayC = arrayA.Concat(arrayB).ToArray();
-                        GiamDan(arrayC);
-                        foreach (int k in arrayC)
-                        {
-                            Console.Write(k + " ");
-                        }
-                        Console.WriteLine();
-                }
                     break;
                     case 5:
                         {
-                            Console.Write("Nhập kích thước của  mảng A: ");
-                            int sizeA = int.Parse(Console.ReadLine());
-                            double[] arrayA = new double[sizeA];
-                            Console.WriteLine("Nhập mảng A: ");
-                            for (int i = 0; i < sizeA; i++)
-                            {
-                                arrayA[i] = double.Parse(Console.ReadLine());
-                            }
-                            Console.Write("Nhập kích thước của  mảng B: ");
-                            int sizeB = int.Parse(Console.ReadLine());
-                            double[] arrayB = new double[sizeB];
-                            Console.WriteLine("Nhập mảng B: ");
-                            for (int j = 0; j < sizeB; j++)
-                            {
-                                arrayB[j] = double.Parse(Console.ReadLine());
-                            }
-                            double[] arrayC = arrayA.Concat(arrayB).ToArray();
-                            TangDan(arrayC);
-                            foreach (int k in arrayC)
-                            {
-                                Console.Write(k + " ");
-                            }
-                            Console.WriteLine();
+                            // Nhập các phần tử của mảng a từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
+                            int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Nhập các phần tử của mảng b từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng b (cách nhau bởi dấu cách): ");
+                            int[] arrayB = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Gọi hàm để nối hai mảng và sắp xếp
+                            int[] arrayC = MergeSortedArrays3(arrayA, arrayB);
+
+                            // In mảng kết quả ra màn hình
+                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
+                            Console.WriteLine(string.Join(" ", arrayC));
                         }
                         break;
                     case 6:
                         {
-                            Console.Write("Nhập kích thước của  mảng A: ");
-                            int sizeA = int.Parse(Console.ReadLine());
-                            double[] arrayA = new double[sizeA];
-                            Console.WriteLine("Nhập mảng A: ");
-                            for (int i = 0; i < sizeA; i++)
-                            {
-                                arrayA[i] = double.Parse(Console.ReadLine());
-                            }
-                            Console.Write("Nhập kích thước của  mảng B: ");
-                            int sizeB = int.Parse(Console.ReadLine());
-                            double[] arrayB = new double[sizeB];
-                            Console.WriteLine("Nhập mảng B: ");
-                            for (int j = 0; j < sizeB; j++)
-                            {
-                                arrayB[j] = double.Parse(Console.ReadLine());
-                            }
-                            double[] arrayC = arrayA.Concat(arrayB).ToArray();
-                            GiamDan(arrayC);
-                            foreach (int k in arrayC)
-                            {
-                                Console.Write(k + " ");
-                            }
-                            Console.WriteLine();
+                            // Nhập các phần tử của mảng a từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
+                            int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Nhập các phần tử của mảng b từ bàn phím
+                            Console.Write("Nhập các phần tử của mảng b (cách nhau bởi dấu cách): ");
+                            int[] arrayB = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+
+                            // Gọi hàm để nối hai mảng và sắp xếp
+                            int[] arrayC = MergeSortedArrays4(arrayA, arrayB);
+
+                            // In mảng kết quả ra màn hình
+                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
+                            Console.WriteLine(string.Join(" ", arrayC));
                         }
                         break;
                     case 7:
@@ -165,19 +142,102 @@ namespace Hard
                         }
                         break;
                     case 8:
+                        {
+                            Console.WriteLine("Nhập số tiền: ");
+                            long amount = long.Parse(Console.ReadLine());
+
+                            minCoins(amount);
+                        }
                         break;
                     case 9:
+                        {
+                            Console.Write("Nhập chuỗi chính: ");
+                            string mainString = Console.ReadLine();
+
+                           
+                            Console.Write("Nhập chuỗi con: ");
+                            string subString = Console.ReadLine();
+
+                            
+                            int count = CountSubstringOccurrences(mainString, subString);
+
+                           
+                            Console.WriteLine($"Chuỗi con '{subString}' xuất hiện {count} lần trong chuỗi chính.");
+                        }
+                
                         break;
                     case 10:
+                        {
+                            Console.Write("Nhập các phần tử của mảng (cách nhau bởi dấu cách): ");
+                            string input = Console.ReadLine();
+                            int[] array = Array.ConvertAll(input.Split(' '), int.Parse);
+
+                            // Xáo trộn mảng số
+                            ShuffleArray(array);
+
+                            // In kết quả ra màn hình
+                            Console.WriteLine("Mảng sau khi xáo trộn:");
+                            Console.WriteLine(string.Join(" ", array));
+                        }
                         break;
                     case 11:
+                        {
+                            Console.Write("Nhập giá trị của n: ");
+                            int n = int.Parse(Console.ReadLine());
+                            long result = giaithua(n);
+                            long t = 0;
+                            while (t == 0)
+                            {
+                                t = result % 10;
+                                result /= 10;
+                            }
+                            Console.WriteLine($"Chữ số khác 0 cuối cùng của '{n}'! là: " + t);
+                        }
                         break;
                     case 12:
+                        {
+                            Console.Write("Nhập giá trị của n: ");
+                            int n = int.Parse(Console.ReadLine());
+                            long result = giaithua(n);
+                            int dem = 0;
+                            while (result > 0)
+                            {
+                                if(result%10 == 0)
+                                {
+                                    dem++;
+                                }
+                                result /= 10;
+                            }
+                            Console.WriteLine($"Số chữ số 0 xuất hiện trong '{n}'! là: " + dem);
+                        }
                         break;
 
                 }
             }
             while (number != 0);
+        }
+        // Hàm đổi số tờ tiền ít nhất
+        static void minCoins(long amount)
+        {
+            long[] denominations = { 500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000 };
+            long[] count = new long[denominations.Length];
+
+            for(int i = 0; i < denominations.Length; i++)
+            {
+                if(amount >= denominations[i])
+                {
+                    count[i] = amount / denominations[i];
+                    amount = amount % denominations[i];
+                }
+            }
+            Console.Write("Số tờ tiền đổi ít nhất là: ");
+            for(int i =0; i < count.Length; i++)
+            {
+                if (count[i] > 0)
+                {
+                    Console.WriteLine($"{denominations[i]} VND : {count[i]} tờ");
+                }
+            }
         }
         //Hàm đổi tiền từ số qua chữ
         static string NumberToWords(long number)
@@ -258,6 +318,200 @@ namespace Hard
         {
             Array.Sort(array);
             Array.Reverse(array);
+        }
+        // số lần xuất hiện chuỗi a trong b
+        
+        static int CountSubstringOccurrences(string mainString, string subString)
+        {
+            if (string.IsNullOrEmpty(mainString) || string.IsNullOrEmpty(subString))
+            {
+                return 0;
+            }
+
+            int count = 0;
+            int startIndex = 0;
+
+            while ((startIndex = mainString.IndexOf(subString, startIndex)) != -1)
+            {
+                count++;
+                startIndex += subString.Length;
+            }
+
+            return count;
+        }
+        // hàm xáo trộn mảng
+        static void ShuffleArray(int[] array)
+        {
+            Random rand = new Random();
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = rand.Next(0, i + 1);
+                // Hoán đổi array[i] và array[j]
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        // hàm tính giai thừa n
+        static long giaithua(int k)
+        {
+            if (k < 0)
+            {
+                throw new ArgumentException("N phải là số nguyên dương.");
+            }
+
+            if (k == 0 || k == 1)
+            {
+                return 1;
+            }
+
+            return k * giaithua(k - 1);
+        }
+        static double Random()
+        {
+            Random rand = new Random();
+            return rand.NextDouble();
+        }
+
+        // Hàm randomRange(a, b) trả về giá trị từ a đến b
+        static double RandomRange(double a, double b)
+        {
+            // Sử dụng Random() để lấy giá trị trong khoảng [0, 1]
+            double randValue = Random();
+
+            // Chuyển đổi giá trị này vào khoảng [a, b]
+            return a + (randValue * (b - a));
+        }
+        // hàm sắp xếp tăng dần sẵn
+        static int[] MergeSortedArrays(int[] a, int[] b)
+        {
+            int[] c = new int[a.Length + b.Length];
+            int i = 0, j = 0, k = 0;
+
+            // Hợp nhất hai mảng
+            while (i < a.Length && j < b.Length)
+            {
+                if (a[i] <= b[j])
+                {
+                    c[k++] = a[i++];
+                }
+                else
+                {
+                    c[k++] = b[j++];
+                }
+            }
+
+            // Sao chép các phần tử còn lại của mảng a, nếu có
+            while (i < a.Length)
+            {
+                c[k++] = a[i++];
+            }
+
+            // Sao chép các phần tử còn lại của mảng b, nếu có
+            while (j < b.Length)
+            {
+                c[k++] = b[j++];
+            }
+
+            return c;
+        }
+        // hàm sắp xếp giảm dần
+        static int[] MergeSortedArrays2(int[] a, int[] b)
+        {
+            int[] c = new int[a.Length + b.Length];
+            int i = 0, j = 0, k = 0;
+
+            // Hợp nhất hai mảng
+            while (i < a.Length && j < b.Length)
+            {
+                if (a[i] >= b[j])
+                {
+                    c[k++] = a[i++];
+                }
+                else
+                {
+                    c[k++] = b[j++];
+                }
+            }
+
+            // Sao chép các phần tử còn lại của mảng a, nếu có
+            while (i < a.Length)
+            {
+                c[k++] = a[i++];
+            }
+
+            // Sao chép các phần tử còn lại của mảng b, nếu có
+            while (j < b.Length)
+            {
+                c[k++] = b[j++];
+            }
+
+            return c;
+        }
+        //Hàm sắp xếp tăng dần theo giảm dần
+        static int[] MergeSortedArrays3(int[] a, int[] b)
+        {
+            int[] c = new int[a.Length + b.Length];
+            int i = 0, j = 0, k = a.Length + b.Length;
+
+            // Hợp nhất hai mảng
+            while (i < a.Length && j < b.Length)
+            {
+                if (a[i] <= b[j])
+                {
+                    c[k--] = a[i++];
+                }
+                else
+                {
+                    c[k--] = b[j++];
+                }
+            }
+
+            // Sao chép các phần tử còn lại của mảng a, nếu có
+            while (i < a.Length)
+            {
+                c[k--] = a[i++];
+            }
+
+            // Sao chép các phần tử còn lại của mảng b, nếu có
+            while (j < b.Length)
+            {
+                c[k--] = b[j++];
+            }
+
+            return c;
+        }
+        static int[] MergeSortedArrays4(int[] a, int[] b)
+        {
+            int[] c = new int[a.Length + b.Length];
+            int i = 0, j = 0, k = a.Length + b.Length;
+
+            // Hợp nhất hai mảng
+            while (i < a.Length && j < b.Length)
+            {
+                if (a[i] >= b[j])
+                {
+                    c[k--] = a[i++];
+                }
+                else
+                {
+                    c[k--] = b[j++];
+                }
+            }
+
+            // Sao chép các phần tử còn lại của mảng a, nếu có
+            while (i < a.Length)
+            {
+                c[k--] = a[i++];
+            }
+
+            // Sao chép các phần tử còn lại của mảng b, nếu có
+            while (j < b.Length)
+            {
+                c[k--] = b[j++];
+            }
+
+            return c;
         }
     }
 }

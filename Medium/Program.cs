@@ -358,24 +358,44 @@ namespace Medium
                         }
                         break;
                     case 11:
+                        {
+                            Console.Write("Nhập giá trị a: ");
+                            double a = double.Parse(Console.ReadLine());
+
+                            // Lấy giá trị random trong khoảng từ 0 đến a
+                            double result = RandomA(a);
+
+                            // In kết quả ra màn hình
+                            Console.WriteLine("Giá trị random trong khoảng từ 0 đến " + a + ": " + result);
+                        }
                         break;
                     case 12:
+                        {
+                            Console.Write("Nhập giá trị a: ");
+                            double a = double.Parse(Console.ReadLine());
+
+                            // Lấy giá trị random trong khoảng từ 0 đến a
+                            double result = RandomB(a);
+
+                            // In kết quả ra màn hình
+                            Console.WriteLine($"Giá trị random trong khoảng từ -'{a}' đến " + a + ": " + result);
+                        }
                         break;
                     case 13:
                         {
-                            // Nhập thời gian checkin
-                            Console.Write("Nhập thời gian checkin (dạng dd/MM/yyyy HH:mm): ");
-                            DateTime checkInDateTime = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", null);
+                            //// Nhập thời gian checkin
+                            //Console.Write("Nhập thời gian checkin (dạng dd/MM/yyyy HH:mm): ");
+                            //DateTime checkInDateTime = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", null);
 
-                            // Nhập thời gian checkout
-                            Console.Write("Nhập thời gian checkout (dạng dd/MM/yyyy HH:mm): ");
-                            DateTime checkOutDateTime = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", null);
+                            //// Nhập thời gian checkout
+                            //Console.Write("Nhập thời gian checkout (dạng dd/MM/yyyy HH:mm): ");
+                            //DateTime checkOutDateTime = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy HH:mm", null);
 
-                            // Tính số tiền phải trả
-                            double totalAmount = CalculateTotalAmount(checkInDateTime, checkOutDateTime);
+                            //// Tính số tiền phải trả
+                            //double totalAmount = CalculateTotalAmount(checkInDateTime, checkOutDateTime);
 
-                            // Hiển thị kết quả
-                            Console.WriteLine($"Số tiền khách phải trả: {totalAmount}k");
+                            //// Hiển thị kết quả
+                            //Console.WriteLine($"Số tiền khách phải trả: {totalAmount}k");
                         }
                         break;
                     case 14:
@@ -481,48 +501,48 @@ namespace Medium
         }
 
         //Hàm tính tiens nhà nghỉ
-        static double CalculateTotalAmount(DateTime checkIn, DateTime checkOut)
-        {
-            const double firstTwoHoursRate = 70;
-            const double subsequentHoursRate = 50;
-            const double overnightRate = 160;
-            const double extraHourRate = 40;
+        //static double CalculateTotalAmount(DateTime checkIn, DateTime checkOut)
+        //{
+        //    const double firstTwoHoursRate = 70;
+        //    const double subsequentHoursRate = 50;
+        //    const double overnightRate = 160;
+        //    const double extraHourRate = 40;
 
-            double totalAmount = 0;
+        //    double totalAmount = 0;
 
-            // Tính tổng số giờ sử dụng
-            double totalHours = (checkOut - checkIn).TotalHours;
+        //    // Tính tổng số giờ sử dụng
+        //    double totalHours = (checkOut - checkIn).TotalHours;
 
-            // Kiểm tra nếu qua đêm (checkIn trước 24h và checkOut sau 8h sáng hôm sau)
-            if (checkIn.Date < checkOut.Date && (checkIn.Date == checkOut.Date && checkOut.TimeOfDay > TimeSpan.FromHours(8)))
-            {
-                // Số giờ vượt quá 8h sáng hôm sau
-                DateTime nextDay8AM = checkIn.Date.AddDays(1).AddHours(8);
-                double extraHours = (checkOut - nextDay8AM).TotalHours;
+        //    // Kiểm tra nếu qua đêm (checkIn trước 24h và checkOut sau 8h sáng hôm sau)
+        //    if (checkIn.Date < checkOut.Date && (checkIn.Date == checkOut.Date && checkOut.TimeOfDay > TimeSpan.FromHours(8)))
+        //    {
+        //        // Số giờ vượt quá 8h sáng hôm sau
+        //        DateTime nextDay8AM = checkIn.Date.AddDays(1).AddHours(8);
+        //        double extraHours = (checkOut - nextDay8AM).TotalHours;
 
-                if (extraHours < 0)
-                {
-                    extraHours = 0;
-                }
+        //        if (extraHours < 0)
+        //        {
+        //            extraHours = 0;
+        //        }
                
-                // Tổng số tiền phải trả
-                totalAmount = +overnightRate + extraHours * extraHourRate;
-            }
-            else
-            {
-                // Tính tiền theo giờ thông thường
-                if (totalHours <= 2)
-                {
-                    totalAmount = totalHours * firstTwoHoursRate;
-                }
-                else
-                {
-                    totalAmount = 2 * firstTwoHoursRate + (totalHours - 2) * subsequentHoursRate;
-                }
-            }
+        //        // Tổng số tiền phải trả
+        //        totalAmount = +overnightRate + extraHours * extraHourRate;
+        //    }
+        //    else
+        //    {
+        //        // Tính tiền theo giờ thông thường
+        //        if (totalHours <= 2)
+        //        {
+        //            totalAmount = totalHours * firstTwoHoursRate;
+        //        }
+        //        else
+        //        {
+        //            totalAmount = 2 * firstTwoHoursRate + (totalHours - 2) * subsequentHoursRate;
+        //        }
+        //    }
 
-            return totalAmount;
-        }
+        //    return totalAmount;
+        //}
         // hàm cắt chuỗi từ vị trí bắt đầu và số kí tự cắt
         static string catchuoisokitu(string str,int start ,int length)
         {
@@ -704,6 +724,27 @@ namespace Medium
         {
             Array.Sort(array);
             Array.Reverse(array);
+        }
+        //Hàm random(0,1)
+        static double Random()
+        {
+            Random rand = new Random();
+            return rand.NextDouble();
+        }
+
+        // Hàm random(a) trả về giá trị từ 0 đến a
+        static double RandomA(double a)
+        {
+            return Random() * a;
+        }
+        // Hàm random từ -a đến a
+        static double RandomB(double a)
+        {
+            // Sử dụng Random() để lấy giá trị trong khoảng [0, 1]
+            double randValue = Random();
+
+            // Chuyển đổi giá trị này vào khoảng [-a, a]
+            return (randValue * 2 * a) - a;
         }
     }
 }

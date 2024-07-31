@@ -5,3 +5,10 @@ C:\Users\admin\Desktop\Easy\Hard\obj\Debug\Hard.csproj.AssemblyReference.cache
 C:\Users\admin\Desktop\Easy\Hard\obj\Debug\Hard.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\Easy\Hard\obj\Debug\Hard.exe
 C:\Users\admin\Desktop\Easy\Hard\obj\Debug\Hard.pdb
+C:\Users\admin\Desktop\test\Easy\Hard\bin\Debug\Hard.exe.config
+C:\Users\admin\Desktop\test\Easy\Hard\bin\Debug\Hard.exe
+C:\Users\admin\Desktop\test\Easy\Hard\bin\Debug\Hard.pdb
+C:\Users\admin\Desktop\test\Easy\Hard\obj\Debug\Hard.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\test\Easy\Hard\obj\Debug\Hard.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\test\Easy\Hard\obj\Debug\Hard.exe
+C:\Users\admin\Desktop\test\Easy\Hard\obj\Debug\Hard.pdb
