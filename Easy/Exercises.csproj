@@ -43,11 +43,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Easy.cs" />
+    <Compile Include="Easy\EasyEx15.cs" />
+    <Compile Include="Easy\EasyEx14.cs" />
+    <Compile Include="Easy\EasyEx13.cs" />
+    <Compile Include="Easy\EasyEx12.cs" />
+    <Compile Include="Easy\EasyEx11.cs" />
+    <Compile Include="Easy\EasyEx10.cs" />
+    <Compile Include="Easy\EasyEx09 .cs" />
+    <Compile Include="Easy\EasyEx08.cs" />
+    <Compile Include="Easy\EasyEx07.cs" />
+    <Compile Include="Easy\EasyEx06.cs" />
+    <Compile Include="Easy\EasyEx05.cs" />
+    <Compile Include="Easy\EasyEx04.cs" />
+    <Compile Include="Easy\EasyEx03.cs" />
+    <Compile Include="Easy\EasyEx02.cs" />
+    <Compile Include="Easy\EasyEx01.cs" />
+    <Compile Include="Easy\Test\EasyEx01TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEX02TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEX03TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx04TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEX05TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx06TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx07TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx08TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx09TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx10TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx11TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx12TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx13TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx14TestRunner.cs" />
+    <Compile Include="Easy\Test\EasyEx15TestRunner.cs" />
+    <Compile Include="Hard.cs" />
+    <Compile Include="Lib.cs" />
+    <Compile Include="Exercises.cs" />
+    <Compile Include="Medium.cs" />
+    <Compile Include="MediumOld.cs" />
+    <Compile Include="Medium\MediumEx01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCase.cs" />
+    <Compile Include="TestRunner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

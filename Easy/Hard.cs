@@ -3,33 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static com.yotech.exercises.Lib;
 
-namespace Hard
+namespace com.yotech.exercises
 {
-    class Program
+    class Hard
     {
-        static void Main(string[] args)
+        public static void Run()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             int number;
+            
             do {
-                Console.WriteLine("1: Viết hàm đảo ngược ký tự của từng từ trong một câu");
-                Console.WriteLine("2: Cho hàm random() trả về giá trị từ 0 đến 1(có lấy 0 và 1).Viết hàm randomRange(a, b) trong đó dùng hàm random() để trả về một giá trị random trong khoảng từ a đến b");
-                Console.WriteLine("3: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
-                Console.WriteLine("4: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
-                Console.WriteLine("5: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
-                Console.WriteLine("6: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
-                Console.WriteLine("7: Viết hàm đổi từ số tiền bắng số sang số tiền bằng chữ");
-                Console.WriteLine("8: Ngân hàng nhà nước việt nam có các loại tiền 1 nghìn, 2 nghìn, 5 nghìn, 10 nghìn, 50 nghìn và 100 nghìn 500 nghìn.Viết hàm tính số đồng tiền ít nhất khi quy đổi một số tiền nhất định");
-                Console.WriteLine("9: Viết hàm tình tổng số lần xuất hiện của một string a trong string b");
-                Console.WriteLine("10: Viết hàm xáo trộn thứ tự của các phần tử trong mảng số");
-                Console.WriteLine("11: Viết hàm trả về chữ số cuối cùng khác 0 của n giai thừa");
-                Console.WriteLine("12:Viết hàm trả về số chữ số 0 xuất hiện trong giá trị của n giai thừa");
-                Console.WriteLine("Chọn 0: Kết thúc trương trình");
+                Log("1: Viết hàm đảo ngược ký tự của từng từ trong một câu");
+                Log("2: Cho hàm random() trả về giá trị từ 0 đến 1(có lấy 0 và 1).Viết hàm randomRange(a, b) trong đó dùng hàm random() để trả về một giá trị random trong khoảng từ a đến b");
+                Log("3: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
+                Log("4: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
+                Log("5: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
+                Log("6: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
+                Log("7: Viết hàm đổi từ số tiền bắng số sang số tiền bằng chữ");
+                Log("8: Ngân hàng nhà nước việt nam có các loại tiền 1 nghìn, 2 nghìn, 5 nghìn, 10 nghìn, 50 nghìn và 100 nghìn 500 nghìn.Viết hàm tính số đồng tiền ít nhất khi quy đổi một số tiền nhất định");
+                Log("9: Viết hàm tình tổng số lần xuất hiện của một string a trong string b");
+                Log("10: Viết hàm xáo trộn thứ tự của các phần tử trong mảng số");
+                Log("11: Viết hàm trả về chữ số cuối cùng khác 0 của n giai thừa");
+                Log("12:Viết hàm trả về số chữ số 0 xuất hiện trong giá trị của n giai thừa");
+                Log("Chọn 0: Kết thúc trương trình");
 
                 do
                 {
-                    Console.WriteLine("Mời bạn chọn câu hỏi:");
+                    Log("Mời bạn chọn câu hỏi:");
                     string input = Console.ReadLine();
                     bool isNumber = int.TryParse(input, out number);
                 }
@@ -39,14 +41,17 @@ namespace Hard
                 {
                     case 1:
                         {
-                            Console.WriteLine("Nhập một mảng ký tự: ");
+
+                            Log("1: Viết hàm đảo ngược ký tự của từng từ trong một câu");
+                            Log("Nhập một mảng ký tự: ");
                             string kyTu = Console.ReadLine();
                             string result = ReverseCharactersInWords(kyTu);
-                            Console.WriteLine("Chuỗi sau khi đảo chiều: " + result);
+                            Log("Chuỗi sau khi đảo chiều: " + result);
                         }
                         break;
                     case 2:
                         {
+                            Log("2: Cho hàm random() trả về giá trị từ 0 đến 1(có lấy 0 và 1).Viết hàm randomRange(a, b) trong đó dùng hàm random() để trả về một giá trị random trong khoảng từ a đến b");
                             double a, b;
                             do
                             {
@@ -58,11 +63,12 @@ namespace Hard
                             
                             
                             double result = RandomRange(a, b);
-                            Console.WriteLine($"Giá trị random trong khoảng từ '{a}' đến " + b + ": " + result);
+                            Log($"Giá trị random trong khoảng từ '{a}' đến " + b + ": " + result);
                         }
                         break;
                     case 3:
                         {
+                            Log("3: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
                             // Nhập các phần tử của mảng a từ bàn phím
                             Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
                             int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
@@ -75,12 +81,13 @@ namespace Hard
                             int[] arrayC = MergeSortedArrays(arrayA, arrayB);
 
                             // In mảng kết quả ra màn hình
-                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
-                            Console.WriteLine(string.Join(" ", arrayC));
+                            Log("Mảng sau khi nối và sắp xếp:");
+                            Log(string.Join(" ", arrayC));
                         }
                         break;
                     case 4:
                         {
+                            Log("4: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
                             // Nhập các phần tử của mảng a từ bàn phím
                             Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
                             int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
@@ -93,12 +100,13 @@ namespace Hard
                             int[] arrayC = MergeSortedArrays2(arrayA, arrayB);
 
                             // In mảng kết quả ra màn hình
-                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
-                            Console.WriteLine(string.Join(" ", arrayC));
+                            Log("Mảng sau khi nối và sắp xếp:");
+                            Log(string.Join(" ", arrayC));
                         }
                     break;
                     case 5:
                         {
+                            Log("5: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự tăng dần");
                             // Nhập các phần tử của mảng a từ bàn phím
                             Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
                             int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
@@ -111,12 +119,13 @@ namespace Hard
                             int[] arrayC = MergeSortedArrays3(arrayA, arrayB);
 
                             // In mảng kết quả ra màn hình
-                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
-                            Console.WriteLine(string.Join(" ", arrayC));
+                            Log("Mảng sau khi nối và sắp xếp:");
+                            Log(string.Join(" ", arrayC));
                         }
                         break;
                     case 6:
                         {
+                            Log("6: Viết hàm nối 2 mảng số đã sắp xếp theo thứ tự giảm dần");
                             // Nhập các phần tử của mảng a từ bàn phím
                             Console.Write("Nhập các phần tử của mảng a (cách nhau bởi dấu cách): ");
                             int[] arrayA = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
@@ -129,21 +138,23 @@ namespace Hard
                             int[] arrayC = MergeSortedArrays4(arrayA, arrayB);
 
                             // In mảng kết quả ra màn hình
-                            Console.WriteLine("Mảng sau khi nối và sắp xếp:");
-                            Console.WriteLine(string.Join(" ", arrayC));
+                            Log("Mảng sau khi nối và sắp xếp:");
+                            Log(string.Join(" ", arrayC));
                         }
                         break;
                     case 7:
                         {
+                            Log("7: Viết hàm đổi từ số tiền bắng số sang số tiền bằng chữ");
                             Console.Write("Nhập số tiền = ");
                             long amount = long.Parse(Console.ReadLine());
                             string amountWords = NumberToWords(amount);
-                            Console.WriteLine(amountWords);
+                            Log(amountWords);
                         }
                         break;
                     case 8:
                         {
-                            Console.WriteLine("Nhập số tiền: ");
+                            Log("8: Ngân hàng nhà nước việt nam có các loại tiền 1 nghìn, 2 nghìn, 5 nghìn, 10 nghìn, 50 nghìn và 100 nghìn 500 nghìn.Viết hàm tính số đồng tiền ít nhất khi quy đổi một số tiền nhất định");
+                            Log("Nhập số tiền: ");
                             long amount = long.Parse(Console.ReadLine());
 
                             minCoins(amount);
@@ -151,6 +162,8 @@ namespace Hard
                         break;
                     case 9:
                         {
+                            Log("9: Viết hàm tình tổng số lần xuất hiện của một string a trong string b");
+
                             Console.Write("Nhập chuỗi chính: ");
                             string mainString = Console.ReadLine();
 
@@ -162,12 +175,14 @@ namespace Hard
                             int count = CountSubstringOccurrences(mainString, subString);
 
                            
-                            Console.WriteLine($"Chuỗi con '{subString}' xuất hiện {count} lần trong chuỗi chính.");
+                            Log($"Chuỗi con '{subString}' xuất hiện {count} lần trong chuỗi chính.");
                         }
                 
                         break;
                     case 10:
                         {
+                            Log("10: Viết hàm xáo trộn thứ tự của các phần tử trong mảng số");
+
                             Console.Write("Nhập các phần tử của mảng (cách nhau bởi dấu cách): ");
                             string input = Console.ReadLine();
                             int[] array = Array.ConvertAll(input.Split(' '), int.Parse);
@@ -176,12 +191,13 @@ namespace Hard
                             ShuffleArray(array);
 
                             // In kết quả ra màn hình
-                            Console.WriteLine("Mảng sau khi xáo trộn:");
-                            Console.WriteLine(string.Join(" ", array));
+                            Log("Mảng sau khi xáo trộn:");
+                            Log(string.Join(" ", array));
                         }
                         break;
                     case 11:
                         {
+                            Log("11: Viết hàm trả về chữ số cuối cùng khác 0 của n giai thừa");
                             Console.Write("Nhập giá trị của n: ");
                             int n = int.Parse(Console.ReadLine());
                             long result = giaithua(n);
@@ -191,11 +207,13 @@ namespace Hard
                                 t = result % 10;
                                 result /= 10;
                             }
-                            Console.WriteLine($"Chữ số khác 0 cuối cùng của '{n}'! là: " + t);
+                            Log($"Chữ số khác 0 cuối cùng của '{n}'! là: " + t);
                         }
                         break;
                     case 12:
                         {
+                            Log("12:Viết hàm trả về số chữ số 0 xuất hiện trong giá trị của n giai thừa");
+
                             Console.Write("Nhập giá trị của n: ");
                             int n = int.Parse(Console.ReadLine());
                             long result = giaithua(n);
@@ -208,7 +226,7 @@ namespace Hard
                                 }
                                 result /= 10;
                             }
-                            Console.WriteLine($"Số chữ số 0 xuất hiện trong '{n}'! là: " + dem);
+                            Log($"Số chữ số 0 xuất hiện trong '{n}'! là: " + dem);
                         }
                         break;
 
@@ -235,7 +253,7 @@ namespace Hard
             {
                 if (count[i] > 0)
                 {
-                    Console.WriteLine($"{denominations[i]} VND : {count[i]} tờ");
+                    Log($"{denominations[i]} VND : {count[i]} tờ");
                 }
             }
         }
